@@ -259,12 +259,6 @@
     <!-- Flag specifying whether WFC over IMS is available on device -->
     <bool name="config_device_wfc_ims_available">true</bool>
 
-    <!-- String indicating the package name of the device ImsService implementation for MMTEL. -->
-    <string name="config_ims_mmtel_package">org.codeaurora.ims</string>
-
-    <!-- String indicating the package name of the device ImsService implementation for RCS. -->
-    <string name="config_ims_rcs_package">com.android.service.ims</string>
-
     <!-- IWLAN data service package name to bind to by default. If none is specified in an overlay, an
          empty string is passed in -->
     <string name="config_wlan_data_service_package">vendor.qti.iwlan</string>
