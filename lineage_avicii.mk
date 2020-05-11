@@ -24,6 +24,9 @@ $(call inherit-product, device/oneplus/avicii/device.mk)
 # Inherit some common PixelExperience stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# Extra FOD stuff
+TARGET_HAS_FOD := true
+
 PRODUCT_NAME := lineage_avicii
 PRODUCT_DEVICE := avicii
 PRODUCT_MANUFACTURER := OnePlus
