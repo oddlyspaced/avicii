@@ -131,12 +131,17 @@ PRODUCT_COPY_FILES += \
 
 # Common init scripts
 PRODUCT_PACKAGES += \
+    init.opcamera.rc \
     init.qcom.rc \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/vendor.init.qcom.rc:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/init/hw/init.qcom.rc
+
+# Device Settings
+PRODUCT_PACKAGES += \
+    DeviceSettings
 
 # Display
 PRODUCT_PACKAGES += \
@@ -218,7 +223,6 @@ PRODUCT_PACKAGES += \
 
 # tri-state-key
 PRODUCT_PACKAGES += \
-    KeyHandler \
     tri-state-key_daemon
 
 # Trust HAL
