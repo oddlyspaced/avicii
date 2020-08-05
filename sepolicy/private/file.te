@@ -20,3 +20,6 @@ type sysfs_usb_supply, sysfs_type, fs_type;
 type display_misc_file, file_type, data_file_type, core_data_file_type;
 
 type lineage_data_file, file_type, data_file_type,  core_data_file_type;
+
+# Files in userdata
+type qmipriod_data_file, file_type, data_file_type;
