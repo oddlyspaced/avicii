@@ -24,3 +24,5 @@ allow hal_livedisplay_lito { sysfs_livedisplay_tuneable sysfs_oem }:file rw_file
 
 # Allow hal_livedisplay_lito to set config_prop
 set_prop(hal_livedisplay_lito, config_prop)
+
+allow hal_livedisplay_lito sysfs_dm:file { getattr open write };
