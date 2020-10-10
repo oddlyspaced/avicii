@@ -1,0 +1,14 @@
+type dumpsys, domain;
+
+allow cameraserver self:process { execmem };
+
+allow cameraserver shell_exec:file { r_file_perms };
+
+binder_call(cameraserver, hal_configstore_default)
+binder_call(cameraserver, mediacodec)
+
+typeattribute hal_nfc_default data_between_core_and_vendor_violators;
+allow hal_nfc_default nfc_data_file:dir { search };
+allow hal_nfc_default nfc_data_file:file { r_file_perms };
+
+get_prop(cameraserver, vendor_persist_camera_prop)

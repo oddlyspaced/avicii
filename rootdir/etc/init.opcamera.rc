@@ -1,4 +1,5 @@
 on boot
+    mkdir /data/misc/cameraserver 0700 cameraserver cameraserver
     mkdir /data/misc/lineage 0770 cameraserver audio
     write /data/misc/lineage/client_package_name 0
     chown cameraserver audio /data/misc/lineage/client_package_name

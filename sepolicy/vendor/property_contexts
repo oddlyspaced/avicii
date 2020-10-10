@@ -1,2 +1,15 @@
 # QTI
 persist.vendor.qmi_log_on              u:object_r:exported_default_prop:s0
+
+persist.vendor.diag.max.size           u:object_r:diag_prop:s0
+
+# Camera
+camera.                                u:object_r:vendor_camera_prop:s0
+persist.camera.                        u:object_r:vendor_camera_prop:s0
+persist.vendor.camera.                 u:object_r:vendor_camera_prop:s0
+ro.camera.                             u:object_r:vendor_camera_prop:s0
+ro.vendor.camera.                      u:object_r:vendor_camera_prop:s0
+vendor.camera.                         u:object_r:vendor_camera_prop:s0
+vendor.debug.camera.                   u:object_r:vendor_camera_prop:s0
+persist.debug.set.fixedfps             u:object_r:vendor_camera_prop:s0
+persist.debug.sf.showfps               u:object_r:vendor_camera_prop:s0
