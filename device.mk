@@ -26,6 +26,9 @@ $(call inherit-product, vendor/oneplus/avicii/avicii-vendor.mk)
 # Gapps
 $(call inherit-product-if-exists, vendor/gapps/config.mk)
 
+# Camera
+$(call inherit-product, vendor/addons/OPCamera/config.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
