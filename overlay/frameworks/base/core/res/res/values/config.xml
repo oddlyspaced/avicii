@@ -726,4 +726,7 @@
     <!-- default refresh rate in the zone defined by brightness and ambient thresholds -->
     <integer name="config_defaultRefreshRateInZone">90</integer>
 
+    <!-- Smart charging -->
+    <bool name="config_smartChargingAvailable">true</bool>
+
 </resources>
