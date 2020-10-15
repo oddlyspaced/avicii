@@ -101,7 +101,10 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap
+    GCam
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/product/etc/permissions/com.google.android.GoogleCamera.Urnyx.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.google.android.GoogleCamera.Urnyx.xml
 
 # Common init scripts
 PRODUCT_PACKAGES += \
