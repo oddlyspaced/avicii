@@ -26,6 +26,9 @@ $(call inherit-product, vendor/oneplus/avicii/avicii-vendor.mk)
 # Gapps
 $(call inherit-product-if-exists, vendor/gapps/config.mk)
 
+# OP Camera
+$(call inherit-product, device/oneplus/opcamera/opcamera-vendor.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
@@ -110,10 +113,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
-
-# Camera
-PRODUCT_PACKAGES += \
-    Snap
 
 # Common init scripts
 PRODUCT_PACKAGES += \
