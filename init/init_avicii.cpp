@@ -45,15 +45,11 @@ constexpr const char* RO_PROP_SOURCES[] = {
 };
 
 constexpr const char* BUILD_DESCRIPTION[] = {
-	"Nord_IND-user 10 QKQ1.200412.002 2010231934 release-keys",
-        "Nord_EEA-user 10 QKQ1.200412.002 2010231937 release-keys",
-        "Nord-user 10 QKQ1.200412.002 2010231954 release-keys",
+	"coral-user 11 RP1A.201005.004 6782484 release-keys",
 };
 
 constexpr const char* BUILD_FINGERPRINT[] = {
-        "OnePlus/Nord_IND/Nord:10/QKQ1.200412.002/2010231934:user/release-keys",
-        "OnePlus/Nord_EEA/Nord:10/QKQ1.200412.002/2010231937:user/release-keys",
-        "OnePlus/Nord/Nord:10/QKQ1.200412.002/2010231954:user/release-keys",
+        "google/coral/coral:11/RP1A.201005.004/6782484:user/release-keys",
 };
 
 void property_override(char const prop[], char const value[]) {
@@ -67,52 +63,22 @@ void property_override(char const prop[], char const value[]) {
 }
 
 void load_props() {
-    const auto ro_prop_override = [](const char* source, const char* prop, const char* value,
-                                     bool product) {
+    const auto ro_prop_override = [](const char* source, const char* prop, const char* value) {
         std::string prop_name = "ro.";
 
-        if (product) prop_name += "product.";
         if (source != nullptr) prop_name += source;
-        if (!product) prop_name += "build.";
+        prop_name += "build.";
         prop_name += prop;
 
         property_override(prop_name.c_str(), value);
     };
 
-    int rf_version = stoi(android::base::GetProperty("ro.boot.rf_version", "0"));
-
-    switch (rf_version) {
-      case 13:
-        for (const auto& source : RO_PROP_SOURCES) {
-            ro_prop_override(source, "fingerprint", BUILD_FINGERPRINT[0],
-                             false);
-        }
-        ro_prop_override(nullptr, "description", BUILD_DESCRIPTION[0],
-                          false);
-        // ro.build.fingerprint property has not been set
-            property_set("ro.build.fingerprint", BUILD_FINGERPRINT[0]);
-        break;
-      case 14:
-        for (const auto& source : RO_PROP_SOURCES) {
-            ro_prop_override(source, "fingerprint", BUILD_FINGERPRINT[1],
-                             false);
-        }
-        ro_prop_override(nullptr, "description", BUILD_DESCRIPTION[1],
-                         false);
-        // ro.build.fingerprint property has not been set
-            property_set("ro.build.fingerprint", BUILD_FINGERPRINT[1]);
-        break;
-      default:
-        for (const auto& source : RO_PROP_SOURCES) {
-            ro_prop_override(source, "fingerprint", BUILD_FINGERPRINT[2],
-                             false);
-        }
-        ro_prop_override(nullptr, "description", BUILD_DESCRIPTION[2],
-                         false);
-        // ro.build.fingerprint property has not been set
-            property_set("ro.build.fingerprint", BUILD_FINGERPRINT[2]);
-        break;
+    for (const auto& source : RO_PROP_SOURCES) {
+        ro_prop_override(source, "fingerprint", BUILD_FINGERPRINT[0]);
     }
+    ro_prop_override(nullptr, "description", BUILD_DESCRIPTION[0]);
+    // ro.build.fingerprint property has not been set
+        property_set("ro.build.fingerprint", BUILD_FINGERPRINT[0]);
 }
 
 void vendor_load_properties() {
