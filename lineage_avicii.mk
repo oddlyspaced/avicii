@@ -38,6 +38,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE=OnePlusNord \
     PRODUCT_NAME=OnePlusNord \
-    PRIVATE_BUILD_DESC="Nord-user 10 QKQ1.200412.002 2010231954 release-keys"
+    PRIVATE_BUILD_DISC="redfin-user 11 RD1A.201105.003.A1 6886512 release-keys"
 
-BUILD_FINGERPRINT := "OnePlus/Nord/Nord:10/QKQ1.200412.002/2010231954:user/release-keys"
+BUILD_FINGERPRINT := "google/redfin/redfin:11/RD1A.201105.003.A1/6886512:user/release-keys"
