@@ -198,7 +198,14 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0:64 \
     com.android.nfc_extras \
     NfcNci \
-    Tag \
+    Tag
+
+# OnePlus
+PRODUCT_PACKAGES += \
+    oneplus-fwk.oneplus_lito
+
+PRODUCT_BOOT_JARS += \
+    oneplus-fwk.oneplus_lito
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
