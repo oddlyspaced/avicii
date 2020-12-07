@@ -23,6 +23,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/avicii/avicii-vendor.mk)
 
+# GoogleCamera
+$(call inherit-product, packages/apps/GoogleCamera/config.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
@@ -124,10 +127,7 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    GCam
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/product/etc/permissions/com.google.android.GoogleCamera.Urnyx.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.google.android.GoogleCamera.Urnyx.xml
+    Snap
 
 # Common init scripts
 PRODUCT_PACKAGES += \
