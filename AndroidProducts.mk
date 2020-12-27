@@ -15,8 +15,8 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_avicii.mk
+    $(LOCAL_DIR)/evolution_avicii.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_avicii-userdebug \
-    lineage_avicii-eng
+    evolution_avicii-userdebug \
+    evolution_avicii-eng
